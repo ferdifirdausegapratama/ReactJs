@@ -1,13 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import NavbarWithStyling from "./components/NavbarWithStyling";
+
+function Navbar() {
+  return (
+    <div>
+      <h1>Hello FSW 2</h1>
+      <ul>
+        <li>About Me</li>
+        <li>FAQ</li>
+        <li>Logout</li>
+      </ul>
+    </div>
+  );
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const listMenu = ["About Me", "FAQ", "Logout"];
 
   return (
     <>
+      <NavbarWithStyling menu={listMenu} />
+      <Navbar />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -29,7 +46,5 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
-
-export default App
